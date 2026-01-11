@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  color: #555;
+  background-color: #FAFAFA; /* Very light gray background */
+}
