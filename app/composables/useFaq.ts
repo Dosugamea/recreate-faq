@@ -1,4 +1,4 @@
-import type { FaqApiResponse } from '~/types'
+import type { FaqApiResponse } from '@/types'
 
 export const useFaq = async () => {
   const { data: response } = await useFetch<FaqApiResponse>('/api/faq')

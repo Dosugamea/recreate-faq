@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Faq } from '~/types'
+import type { Faq } from '@/types'
 
 defineProps<{
   faqs: Faq[]

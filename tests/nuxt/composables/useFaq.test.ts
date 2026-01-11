@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { registerEndpoint } from '@nuxt/test-utils/runtime'
-import { useFaq } from '../../app/composables/useFaq'
+import { useFaq } from '@/composables/useFaq'
 
 // Mocking useHead since it is used in the component/page context usually,
 // but useFaq doesn't call useHead. But wait, useFaq calls useFetch.
@@ -64,7 +64,7 @@ describe('useFaq', () => {
 
     searchQuery.value = 'Apple'
     expect(filteredAllFaqs.value.length).toBe(1)
-    expect(filteredAllFaqs.value[0].question).toBe('Apple')
+    expect(filteredAllFaqs.value[0]!.question).toBe('Apple')
   })
 
   it('sorts by helpfulness', async () => {
@@ -72,6 +72,6 @@ describe('useFaq', () => {
 
     sortOrder.value = 'helpful'
     // Banana (10) > Apple (5)
-    expect(filteredAllFaqs.value[0].question).toBe('Banana')
+    expect(filteredAllFaqs.value[0]!.question).toBe('Banana')
   })
 })

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useInquiry } from '~/composables/useInquiry'
-import AppLayout from '~/components/ui/AppLayout.vue'
-import FormInput from '~/components/ui/FormInput.vue'
-import FormSelect from '~/components/ui/FormSelect.vue'
-import FormTextarea from '~/components/ui/FormTextarea.vue'
-import FormCheckbox from '~/components/ui/FormCheckbox.vue'
+import { useInquiry } from '@/composables/useInquiry'
+import AppLayout from '@/components/ui/AppLayout.vue'
+import FormInput from '@/components/ui/FormInput.vue'
+import FormSelect from '@/components/ui/FormSelect.vue'
+import FormTextarea from '@/components/ui/FormTextarea.vue'
+import FormCheckbox from '@/components/ui/FormCheckbox.vue'
 
 const { response, form, submit } = await useInquiry()
 

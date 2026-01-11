@@ -9,13 +9,16 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "format": "eslint . --fix && prettier --write ."
+    "test": "vitest run",
+    "format": "eslint . --fix && prettier --write .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
-    "@nuxtjs/storybook": "^8.3.5",
+    "@storybook/vue3-vite": "^10.1.11",
+    "@vitejs/plugin-vue": "^6.0.3",
     "nuxt": "^4.2.2",
-    "storybook": "~9.0.5",
     "vue": "^3.5.26",
     "vue-router": "^4.6.4"
   },
@@ -23,12 +26,14 @@
     "@nuxt/eslint": "^1.12.1",
     "@nuxt/test-utils": "^3.23.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
+    "@storybook/vue3-vite": "^10.1.11",
     "@vue/test-utils": "^2.4.6",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "happy-dom": "^20.1.0",
     "prettier": "^3.7.4",
+    "storybook": "^10.1.11",
     "vitest": "^3.2.4"
   }
 }

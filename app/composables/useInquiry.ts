@@ -1,4 +1,4 @@
-import type { InquiryResponse } from '~/types'
+import type { InquiryResponse } from '@/types'
 
 export const useInquiry = async () => {
   const { data: response } = await useFetch<InquiryResponse>('/api/inquiry')
