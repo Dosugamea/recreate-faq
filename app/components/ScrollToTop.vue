@@ -19,11 +19,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <button 
+  <button
     v-show="isVisible"
-    @click="scrollToTop"
     class="fixed bottom-6 right-6 w-12 h-12 bg-gray-600 hover:bg-gray-500 text-white rounded-full shadow-lg flex items-center justify-center transition-all z-50 opacity-80 hover:opacity-100"
+    @click="scrollToTop"
   >
-    <i class="fas fa-chevron-up"></i>
+    <i class="fas fa-chevron-up" />
   </button>
 </template>
