@@ -7,6 +7,7 @@ export default withNuxt(
     rules: {
       'vue/multi-word-component-names': 'off',
       'vue/no-v-html': 'off',
+      'vue/first-attribute-linebreak': 'off',
       'no-restricted-imports': [
         'error',
         {
