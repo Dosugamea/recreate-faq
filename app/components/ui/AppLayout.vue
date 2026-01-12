@@ -14,7 +14,7 @@ defineProps<{
 
     <div class="flex-grow max-w-[700px] mx-auto px-0 sm:px-4 w-full">
       <!-- Tabs -->
-      <UiTabNavigation :active-tab="activeTab" />
+      <TabNavigation :active-tab="activeTab" />
 
       <!-- Main Content Box -->
       <div class="bg-white rounded-none sm:rounded-b-lg shadow-sm border-t-0 p-6 sm:p-10 min-h-[500px]">

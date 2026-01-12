@@ -4,7 +4,7 @@ export interface Faq {
   question: string
   answer: string
   display_order: number
-  view_count: string
+  view_count: number
   reference_yes: string
   reference_no: string
   reference_sum: number
