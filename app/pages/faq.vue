@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import { useFaq } from '@/composables/useFaq'
-import AppLayout from '@/components/ui/AppLayout.vue'
-import FaqSearch from '@/components/faq/FaqSearch.vue'
-import FaqList from '@/components/faq/FaqList.vue'
-import FaqSorter from '@/components/faq/FaqSorter.vue'
-import Pagination from '@/components/common/Pagination.vue'
 
 // FAQのデータやロジックをコンポーザブルから引っこ抜いてくるよ！
 const {

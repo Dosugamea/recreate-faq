@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import TabNavigation from '@/components/ui/TabNavigation.vue'
+import TabNavigation from '@/components/common/TabNavigation.vue'
 
 const meta = {
-  title: 'UI/TabNavigation',
+  title: 'Common/TabNavigation',
   component: TabNavigation,
   tags: ['autodocs'],
   args: {

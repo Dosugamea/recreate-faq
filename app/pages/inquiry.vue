@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import { useInquiry } from '@/composables/useInquiry'
-import AppLayout from '@/components/ui/AppLayout.vue'
-import FormInput from '@/components/ui/FormInput.vue'
-import FormSelect from '@/components/ui/FormSelect.vue'
-import FormTextarea from '@/components/ui/FormTextarea.vue'
-import FormCheckbox from '@/components/ui/FormCheckbox.vue'
 
 const { response, form, submit } = await useInquiry()
 
@@ -30,21 +25,15 @@ const osTypes = [
 </script>
 
 <template>
-  <AppLayout
-    :site-name="response?.meta.site_name"
-    :copyright="response?.meta.copyright"
-    active-tab="inquiry"
-    title="お問い合わせ"
-  >
+  <AppLayout :site-name="response?.meta.site_name" :copyright="response?.meta.copyright" active-tab="inquiry"
+    title="お問い合わせ">
     <!-- Info Box -->
     <div class="bg-gray-100 p-6 text-center text-sm text-gray-600 mb-10 rounded-sm">
       <p class="mb-4">
         よくお問い合わせいただくご質問とその回答をまとめています。<br />お問い合わせの前にご確認ください。
       </p>
-      <NuxtLink
-        to="/faq"
-        class="inline-flex items-center justify-center bg-kirara-green hover:bg-kirara-green-dark text-white font-bold py-3 px-8 rounded shadow-sm transition gap-2 no-underline"
-      >
+      <NuxtLink to="/faq"
+        class="inline-flex items-center justify-center bg-kirara-green hover:bg-kirara-green-dark text-white font-bold py-3 px-8 rounded shadow-sm transition gap-2 no-underline">
         <i class="fas fa-comments" /> よくあるご質問へ
       </NuxtLink>
     </div>
@@ -67,14 +56,8 @@ const osTypes = [
         </FormInput>
 
         <!-- User ID -->
-        <FormInput
-          id="userId"
-          v-model="form.userId"
-          label="ユーザーID"
-          required
-          pattern="[a-zA-Z0-9]{10}|不明"
-          title="10桁の英数字、または「不明」と入力してください"
-        >
+        <FormInput id="userId" v-model="form.userId" label="ユーザーID" required pattern="[a-zA-Z0-9]{10}|不明"
+          title="10桁の英数字、または「不明」と入力してください">
           <template #help>
             ※ユーザーIDはタイトル画面右上に表示されている10桁の英数字です<br />
             ※ご不明の場合は「不明」と記載ください
@@ -87,13 +70,7 @@ const osTypes = [
         </FormInput>
 
         <!-- Type -->
-        <FormSelect
-          id="type"
-          v-model="form.type"
-          label="問い合わせ種別"
-          :options="inquiryTypes"
-          required
-        />
+        <FormSelect id="type" v-model="form.type" label="問い合わせ種別" :options="inquiryTypes" required />
 
         <!-- Date -->
         <FormInput id="date" v-model="form.date" label="発生日時" type="datetime-local" required />
@@ -119,32 +96,22 @@ const osTypes = [
             同意いただけない場合はお問い合わせを送信することができません。
           </p>
           <div
-            class="border border-gray-300 p-4 h-32 overflow-y-scroll text-xs text-gray-500 bg-gray-50 mb-6 leading-relaxed"
-          >
+            class="border border-gray-300 p-4 h-32 overflow-y-scroll text-xs text-gray-500 bg-gray-50 mb-6 leading-relaxed">
             RecreatedFaqは、お客様により良い商品・サービスをご提供するにあたり、お客様の個人情報を、お客様の大切な資産であると認識し、その保有および利用にあたっては、以下に定めるRecreatedFaq共通プライバシーポリシーにもとづき、個人情報の保護に努め、お客様の信頼に応えます。<br /><br />
             1. 個人情報の定義<br />
             2. 利用目的<br />
             (以下略)
           </div>
 
-          <FormCheckbox
-            id="agreed"
-            v-model="form.agreed"
-            label="個人情報の取り扱いについて同意する"
-            required
-          />
+          <FormCheckbox id="agreed" v-model="form.agreed" label="個人情報の取り扱いについて同意する" required />
 
           <div class="text-center">
-            <button
-              type="submit"
-              :disabled="!form.agreed"
-              :class="[
-                'font-bold py-4 mx-auto rounded shadow-sm w-full max-w-sm flex items-center justify-center gap-2 transition text-white',
-                form.agreed
-                  ? 'bg-kirara-green hover:bg-kirara-green-dark hover:shadow-md cursor-pointer'
-                  : 'bg-green-200 cursor-not-allowed',
-              ]"
-            >
+            <button type="submit" :disabled="!form.agreed" :class="[
+              'font-bold py-4 mx-auto rounded shadow-sm w-full max-w-sm flex items-center justify-center gap-2 transition text-white',
+              form.agreed
+                ? 'bg-kirara-green hover:bg-kirara-green-dark hover:shadow-md cursor-pointer'
+                : 'bg-green-200 cursor-not-allowed',
+            ]">
               <i class="fas fa-envelope" /> 確認画面へ
             </button>
           </div>

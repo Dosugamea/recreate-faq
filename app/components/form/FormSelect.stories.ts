@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import FormSelect from '@/components/ui/FormSelect.vue'
+import FormSelect from '@/components/form/FormSelect.vue'
 
 const meta = {
-  title: 'UI/FormSelect',
+  title: 'form/FormSelect',
   component: FormSelect,
   tags: ['autodocs'],
   args: {

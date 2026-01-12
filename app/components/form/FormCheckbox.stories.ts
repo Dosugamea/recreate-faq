@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import FormCheckbox from '@/components/ui/FormCheckbox.vue'
+import FormCheckbox from '@/components/form/FormCheckbox.vue'
 
 const meta = {
-  title: 'UI/FormCheckbox',
+  title: 'form/FormCheckbox',
   component: FormCheckbox,
   tags: ['autodocs'],
   args: {

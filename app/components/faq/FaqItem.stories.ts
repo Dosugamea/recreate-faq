@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import FaqItem from '@/components/FaqItem.vue'
+import FaqItem from '@/components/faq/FaqItem.vue'
 
 const meta = {
   title: 'FAQ/FaqItem',

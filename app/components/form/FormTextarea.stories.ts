@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import FormTextarea from '@/components/ui/FormTextarea.vue'
+import FormTextarea from '@/components/form/FormTextarea.vue'
 
 const meta = {
-  title: 'UI/FormTextarea',
+  title: 'form/FormTextarea',
   component: FormTextarea,
   tags: ['autodocs'],
   args: {

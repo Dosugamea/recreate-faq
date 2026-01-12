@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import AppLayout from '@/components/ui/AppLayout.vue'
+import AppLayout from '@/components/AppLayout.vue'
 
 const meta = {
-  title: 'UI/AppLayout',
+  title: 'Root/AppLayout',
   component: AppLayout,
   tags: ['autodocs'],
   args: {
