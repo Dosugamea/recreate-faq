@@ -28,6 +28,9 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     ScrollToTop: typeof import('./app/components/ScrollToTop.vue')['default']
     TabNavigation: typeof import('./app/components/common/TabNavigation.vue')['default']
+    TheFooter: typeof import('./app/components/TheFooter.vue')['default']
+    TheHeader: typeof import('./app/components/TheHeader.vue')['default']
+    TheScrollToTop: typeof import('./app/components/TheScrollToTop.vue')['default']
   }
 }
 
@@ -49,4 +52,7 @@ declare global {
   const RouterView: typeof import('vue-router')['RouterView']
   const ScrollToTop: typeof import('./app/components/ScrollToTop.vue')['default']
   const TabNavigation: typeof import('./app/components/common/TabNavigation.vue')['default']
+  const TheFooter: typeof import('./app/components/TheFooter.vue')['default']
+  const TheHeader: typeof import('./app/components/TheHeader.vue')['default']
+  const TheScrollToTop: typeof import('./app/components/TheScrollToTop.vue')['default']
 }

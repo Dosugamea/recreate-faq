@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <div class="min-h-screen bg-transparent font-maru flex flex-col">
-    <Header :site-name="siteName" />
+    <TheHeader :site-name="siteName" />
 
     <div class="flex-grow max-w-[700px] mx-auto px-0 sm:px-4 w-full">
       <!-- Tabs -->
@@ -36,7 +36,7 @@ defineProps<{
       </div>
     </div>
 
-    <Footer :copyright="copyright" />
-    <ScrollToTop />
+    <TheFooter :copyright="copyright" />
+    <TheScrollToTop />
   </div>
 </template>

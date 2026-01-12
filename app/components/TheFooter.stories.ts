@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import Footer from '@/components/Footer.vue'
+import TheFooter from '@/components/TheFooter.vue'
 
 const meta = {
-  title: 'Root/Footer',
-  component: Footer,
+  title: 'Root/TheFooter',
+  component: TheFooter,
   tags: ['autodocs'],
   args: {
     copyright: '© 2024 FAQ App',
   },
-} satisfies Meta<typeof Footer>
+} satisfies Meta<typeof TheFooter>
 
 export default meta
 type Story = StoryObj<typeof meta>
