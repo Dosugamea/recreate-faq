@@ -1,5 +1,8 @@
 import type { StorybookConfig } from '@storybook/vue3-vite'
 import path from 'path'
+import vue from '@vitejs/plugin-vue'
+import autoImport from 'unplugin-auto-import/vite'
+import components from 'unplugin-vue-components/vite'
 import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -18,6 +21,16 @@ const config: StorybookConfig = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, '../app'),
     }
+    config.plugins = [
+      ...(config.plugins || []),
+      vue(),
+      autoImport({
+        imports: ['vue', 'vue-router', 'pinia'],
+      }),
+      components({
+        dirs: ['app/components'],
+      }),
+    ]
     return config
   },
 }

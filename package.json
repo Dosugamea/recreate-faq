@@ -11,12 +11,16 @@
     "lint": "eslint .",
     "test": "vitest run",
     "format": "eslint . --fix && prettier --write .",
+    "typecheck": "vue-tsc --noEmit --pretty",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
+    "@vitejs/plugin-vue": "^6.0.3",
     "nuxt": "^4.2.2",
+    "unplugin-auto-import": "^20.3.0",
+    "unplugin-vue-components": "^30.0.0",
     "vue": "^3.5.26",
     "vue-router": "^4.6.4"
   },
