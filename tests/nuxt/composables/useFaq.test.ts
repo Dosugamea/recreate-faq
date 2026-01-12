@@ -6,6 +6,7 @@ import { useFaq } from '@/composables/useFaq'
 // but useFaq doesn't call useHead. But wait, useFaq calls useFetch.
 
 describe('useFaq', () => {
+  // 各テストの前にAPIのエンドポイントをモック化するよ！
   beforeEach(() => {
     registerEndpoint('/api/faq', () => ({
       meta: {
@@ -48,17 +49,13 @@ describe('useFaq', () => {
     }))
   })
 
+  // FAQデータがちゃんと取得できるかチェック！
   it('fetches faqs', async () => {
-    // We need a component context or setup for useFetch to work with registerEndpoint?
-    // Usually tests run in a Nuxt environment with @nuxt/test-utils.
-
-    // We can use runWithContext if needed, but let's try calling it directly inside a setup context wrapper like mountSuspended or just calling it if the environment is set up correctly in vitest.config.
-
-    // Simplest way to test composable that uses auto-imports:
     const { faqs } = await useFaq()
     expect(faqs.value.length).toBe(2)
   })
 
+  // 検索クエリで正しくフィルタリングされるかチェック！
   it('filters by search query', async () => {
     const { searchQuery, filteredAllFaqs } = await useFaq()
 
@@ -67,11 +64,34 @@ describe('useFaq', () => {
     expect(filteredAllFaqs.value[0]!.question).toBe('Apple')
   })
 
+  // 「参考になった順」で正しくソートされるかチェック！
   it('sorts by helpfulness', async () => {
     const { sortOrder, filteredAllFaqs } = await useFaq()
 
     sortOrder.value = 'helpful'
-    // Banana (10) > Apple (5)
+    // Bananaの方が参考になった数（reference_sum）が多いので、先頭に来るはず！
     expect(filteredAllFaqs.value[0]!.question).toBe('Banana')
+  })
+
+  // フィルタを変えただけでは勝手にページが戻らないことを確認！
+  // (明示的にresetCurrentPageを呼ぶ仕様になったからね✨)
+  it('does not reset currentPage automatically on filter change', async () => {
+    const { searchQuery, currentPage } = await useFaq()
+
+    currentPage.value = 2
+    searchQuery.value = 'Apple'
+
+    // watchが削除されたので、2のままのはず！
+    expect(currentPage.value).toBe(2)
+  })
+
+  // resetCurrentPageを呼んだ時にちゃんと1ページ目に戻るかチェック！
+  it('resets currentPage when resetCurrentPage is called', async () => {
+    const { currentPage, resetCurrentPage } = await useFaq()
+
+    currentPage.value = 2
+    resetCurrentPage()
+
+    expect(currentPage.value).toBe(1)
   })
 })
