@@ -6,7 +6,9 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "test": "vitest run",
@@ -38,6 +40,7 @@
     "storybook": "^10.1.11",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4",
-    "vue-tsc": "^3.2.2"
+    "vue-tsc": "^3.2.2",
+    "wrangler": "^4.169.0"
   }
 }
